@@ -45,9 +45,9 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="main.html">Основная документация</a></li>
 <li class="toctree-l1"><a class="reference internal" href="server.html">Развертывание на собственном сервере</a></li>
-<li class="toctree-l1"><a class="reference internal" href="moduleLms.html">Модуль <cite>landmarks.py</cite></a></li>
+<li class="toctree-l1"><a class="reference internal" href="moduleLms.html">Модуль <code class="docutils literal notranslate"><span class="pre">landmarks.py</span></code></a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Модуль Depth Estimator</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#depthestimator">Объекты класса <cite>DepthEstimator</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#depthestimator">Объекты класса <code class="docutils literal notranslate"><span class="pre">DepthEstimator</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id2">Методы класса</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id3">Выходной формат</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id4">Примеры использования</a><ul>
@@ -89,7 +89,7 @@
 <nav class="contents local" id="id1">
 <p class="topic-title">Содержание</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#depthestimator" id="id7">Объекты класса <cite>DepthEstimator</cite></a></p></li>
+<li><p><a class="reference internal" href="#depthestimator" id="id7">Объекты класса <code class="docutils literal notranslate"><span class="pre">DepthEstimator</span></code></a></p></li>
 <li><p><a class="reference internal" href="#id2" id="id8">Методы класса</a></p></li>
 <li><p><a class="reference internal" href="#id3" id="id9">Выходной формат</a></p></li>
 <li><p><a class="reference internal" href="#id4" id="id10">Примеры использования</a></p>
@@ -101,36 +101,36 @@
 </li>
 </ul>
 </nav>
-<p>Этот модуль предоставляет класс <cite>DepthEstimator</cite> для генерации карт глубин из изображений. Он использует предварительно обученную модель для оценки глубины и предоставляет методы для загрузки изображений, генерации карт глубин, сохранения результатов и отображения карт глубин.</p>
+<p>Этот модуль предоставляет класс <code class="docutils literal notranslate"><span class="pre">DepthEstimator</span></code> для генерации карт глубин из изображений. Он использует предварительно обученную модель для оценки глубины и предоставляет методы для загрузки изображений, генерации карт глубин, сохранения результатов и отображения карт глубин.</p>
 <section id="depthestimator">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">Объекты класса <cite>DepthEstimator</cite></a><a class="headerlink" href="#depthestimator" title="Ссылка на этот заголовок"></a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Объекты класса <code class="docutils literal notranslate"><span class="pre">DepthEstimator</span></code></a><a class="headerlink" href="#depthestimator" title="Ссылка на этот заголовок"></a></h2>
 <ul class="simple">
-<li><p><cite>use_gpu</cite> (bool): Определяет, использовать ли GPU для обработки. По умолчанию <cite>True</cite>.</p></li>
-<li><p><cite>pipe</cite>: Объект пайплайна Diffusers, используемый для генерации карт глубин. Инициализируется в методе <cite>_load_model</cite>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">use_gpu</span></code> (bool): Определяет, использовать ли GPU для обработки. По умолчанию <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pipe</span></code>: Объект пайплайна Diffusers, используемый для генерации карт глубин. Инициализируется в методе <code class="docutils literal notranslate"><span class="pre">_load_model</span></code>.</p></li>
 </ul>
 </section>
 <section id="id2">
 <h2><a class="toc-backref" href="#id8" role="doc-backlink">Методы класса</a><a class="headerlink" href="#id2" title="Ссылка на этот заголовок"></a></h2>
 <ul class="simple">
 <li><dl class="simple">
-<dt><cite>__init__(self, use_gpu=True)</cite>: Инициализирует класс <cite>DepthEstimator</cite>, предзагружает библиотеки и модели.</dt><dd><ul>
-<li><p><cite>use_gpu</cite> (bool): Если <cite>True</cite>, используется GPU для обработки, иначе CPU.</p></li>
+<dt><code class="docutils literal notranslate"><span class="pre">__init__(self,</span> <span class="pre">use_gpu=True)</span></code>: Инициализирует класс <code class="docutils literal notranslate"><span class="pre">DepthEstimator</span></code>, предзагружает библиотеки и модели.</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">use_gpu</span></code> (bool): Если <code class="docutils literal notranslate"><span class="pre">True</span></code>, используется GPU для обработки, иначе CPU.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><cite>infer(self, image_input, save_path=None, fix_shape=True)</cite>: Генерирует карту глубин из изображения.</dt><dd><ul>
-<li><p><cite>image_input</cite> (str или numpy.ndarray): Путь к файлу изображения или изображение в формате OpenCV.</p></li>
-<li><p><cite>save_path</cite> (str, optional): Путь для сохранения результата. Если указан, карта глубин будет сохранена в формате PNG. По умолчанию <cite>None</cite>.</p></li>
-<li><p><cite>fix_shape</cite> (bool, optional): Если <cite>True</cite>, возвращает карту глубин в виде 3-мерного массива, иначе возвращает исходную форму. По умолчанию <cite>True</cite>.</p></li>
+<dt><code class="docutils literal notranslate"><span class="pre">infer(self,</span> <span class="pre">image_input,</span> <span class="pre">save_path=None,</span> <span class="pre">fix_shape=True)</span></code>: Генерирует карту глубин из изображения.</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">image_input</span></code> (str или numpy.ndarray): Путь к файлу изображения или изображение в формате OpenCV.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">save_path</span></code> (str, optional): Путь для сохранения результата. Если указан, карта глубин будет сохранена в формате PNG. По умолчанию <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fix_shape</span></code> (bool, optional): Если <code class="docutils literal notranslate"><span class="pre">True</span></code>, возвращает карту глубин в виде 3-мерного массива, иначе возвращает исходную форму. По умолчанию <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><cite>show_heatmap(self, depthmap)</cite>: Отображает карту глубин в виде тепловой карты.</dt><dd><ul>
-<li><p><cite>depthmap</cite>: Карта глубин.</p></li>
+<dt><code class="docutils literal notranslate"><span class="pre">show_heatmap(self,</span> <span class="pre">depthmap)</span></code>: Отображает карту глубин в виде тепловой карты.</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">depthmap</span></code>: Карта глубин.</p></li>
 </ul>
 </dd>
 </dl>
@@ -139,7 +139,7 @@
 </section>
 <section id="id3">
 <h2><a class="toc-backref" href="#id9" role="doc-backlink">Выходной формат</a><a class="headerlink" href="#id3" title="Ссылка на этот заголовок"></a></h2>
-<p>Метод <cite>infer</cite> возвращает карту глубин в виде массива NumPy. Если <cite>fix_shape=True</cite> (рекомендуется), то возвращается 3-мерный массив. Если <cite>fix_shape=False</cite>, то возвращается исходная форма, сгенерированная моделью.</p>
+<p>Метод <code class="docutils literal notranslate"><span class="pre">infer</span></code> возвращает карту глубин в виде массива NumPy. Если <code class="docutils literal notranslate"><span class="pre">fix_shape=True</span></code> (рекомендуется), то возвращается 3-мерный массив. Если <code class="docutils literal notranslate"><span class="pre">fix_shape=False</span></code>, то возвращается исходная форма, сгенерированная моделью.</p>
 </section>
 <section id="id4">
 <h2><a class="toc-backref" href="#id10" role="doc-backlink">Примеры использования</a><a class="headerlink" href="#id4" title="Ссылка на этот заголовок"></a></h2>

@@ -46,18 +46,18 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="main.html">Основная документация</a></li>
 <li class="toctree-l1"><a class="reference internal" href="server.html">Развертывание на собственном сервере</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Модуль <cite>landmarks.py</cite></a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Модуль <code class="docutils literal notranslate"><span class="pre">landmarks.py</span></code></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id2">Обзор</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#facelandmarksprocessor">Класс <cite>FaceLandmarksProcessor</cite></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#facelandmarksprocessor">Класс <code class="docutils literal notranslate"><span class="pre">FaceLandmarksProcessor</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id3">Инициализация</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#process-landmarks">Метод <cite>process_landmarks</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#process-landmarks">Метод <code class="docutils literal notranslate"><span class="pre">process_landmarks</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#facelandmarksresult">Класс <cite>FaceLandmarksResult</cite></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#facelandmarksresult">Класс <code class="docutils literal notranslate"><span class="pre">FaceLandmarksResult</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id4">Атрибуты</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id5">Методы</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#get-full-mask"><cite>get_full_mask()</cite></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#save-image-path"><cite>save_image(path)</cite></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-full-mask"><code class="docutils literal notranslate"><span class="pre">get_full_mask()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#save-image-path"><code class="docutils literal notranslate"><span class="pre">save_image(path)</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -88,7 +88,7 @@
           <div role="navigation" aria-label="Навигация по страницам">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Модуль <cite>landmarks.py</cite></li>
+      <li class="breadcrumb-item active">Модуль <code class="docutils literal notranslate"><span class="pre">landmarks.py</span></code></li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/moduleLms.rst.txt" rel="nofollow"> Просмотреть исходный код страницы</a>
       </li>
@@ -99,24 +99,24 @@
            <div itemprop="articleBody">
              
   <section id="landmarks-py">
-<h1>Модуль <cite>landmarks.py</cite><a class="headerlink" href="#landmarks-py" title="Ссылка на этот заголовок"></a></h1>
+<h1>Модуль <code class="docutils literal notranslate"><span class="pre">landmarks.py</span></code><a class="headerlink" href="#landmarks-py" title="Ссылка на этот заголовок"></a></h1>
 <nav class="contents local" id="id1">
 <p class="topic-title">Содержание</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#id2" id="id11">Обзор</a></p></li>
-<li><p><a class="reference internal" href="#facelandmarksprocessor" id="id12">Класс <cite>FaceLandmarksProcessor</cite></a></p>
+<li><p><a class="reference internal" href="#facelandmarksprocessor" id="id12">Класс <code class="docutils literal notranslate"><span class="pre">FaceLandmarksProcessor</span></code></a></p>
 <ul>
 <li><p><a class="reference internal" href="#id3" id="id13">Инициализация</a></p></li>
-<li><p><a class="reference internal" href="#process-landmarks" id="id14">Метод <cite>process_landmarks</cite></a></p></li>
+<li><p><a class="reference internal" href="#process-landmarks" id="id14">Метод <code class="docutils literal notranslate"><span class="pre">process_landmarks</span></code></a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#facelandmarksresult" id="id15">Класс <cite>FaceLandmarksResult</cite></a></p>
+<li><p><a class="reference internal" href="#facelandmarksresult" id="id15">Класс <code class="docutils literal notranslate"><span class="pre">FaceLandmarksResult</span></code></a></p>
 <ul>
 <li><p><a class="reference internal" href="#id4" id="id16">Атрибуты</a></p></li>
 <li><p><a class="reference internal" href="#id5" id="id17">Методы</a></p>
 <ul>
-<li><p><a class="reference internal" href="#get-full-mask" id="id18"><cite>get_full_mask()</cite></a></p></li>
-<li><p><a class="reference internal" href="#save-image-path" id="id19"><cite>save_image(path)</cite></a></p></li>
+<li><p><a class="reference internal" href="#get-full-mask" id="id18"><code class="docutils literal notranslate"><span class="pre">get_full_mask()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#save-image-path" id="id19"><code class="docutils literal notranslate"><span class="pre">save_image(path)</span></code></a></p></li>
 </ul>
 </li>
 </ul>
@@ -131,32 +131,32 @@
 <li><p><a class="reference internal" href="#id10" id="id24">Дополнительная информация</a></p></li>
 </ul>
 </nav>
-<p>Этот модуль предназначен для обработки изображений лиц и извлечения координат лицевых ориентиров (landmarks) с использованием библиотеки <cite>mediapipe</cite>. Он предоставляет класс <cite>FaceLandmarksProcessor</cite> для обнаружения лиц на изображениях, извлечения координат ориентиров и выполнения различных операций, таких как скрытие глаз/рта и криволинейная обрезка.</p>
+<p>Этот модуль предназначен для обработки изображений лиц и извлечения координат лицевых ориентиров (landmarks) с использованием библиотеки <code class="docutils literal notranslate"><span class="pre">mediapipe</span></code>. Он предоставляет класс <code class="docutils literal notranslate"><span class="pre">FaceLandmarksProcessor</span></code> для обнаружения лиц на изображениях, извлечения координат ориентиров и выполнения различных операций, таких как скрытие глаз/рта и криволинейная обрезка.</p>
 <section id="id2">
 <h2><a class="toc-backref" href="#id11" role="doc-backlink">Обзор</a><a class="headerlink" href="#id2" title="Ссылка на этот заголовок"></a></h2>
 <p>Модуль состоит из двух основных классов:</p>
 <ul class="simple">
-<li><p><cite>FaceLandmarksProcessor</cite>: Основной класс для обработки изображений и извлечения лицевых ориентиров.</p></li>
-<li><p><cite>FaceLandmarksResult</cite>: Класс, содержащий результаты обработки, включая исходное изображение, обработанное изображение, координаты ориентиров и маску лица.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FaceLandmarksProcessor</span></code>: Основной класс для обработки изображений и извлечения лицевых ориентиров.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FaceLandmarksResult</span></code>: Класс, содержащий результаты обработки, включая исходное изображение, обработанное изображение, координаты ориентиров и маску лица.</p></li>
 </ul>
 </section>
 <section id="facelandmarksprocessor">
-<h2><a class="toc-backref" href="#id12" role="doc-backlink">Класс <cite>FaceLandmarksProcessor</cite></a><a class="headerlink" href="#facelandmarksprocessor" title="Ссылка на этот заголовок"></a></h2>
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">Класс <code class="docutils literal notranslate"><span class="pre">FaceLandmarksProcessor</span></code></a><a class="headerlink" href="#facelandmarksprocessor" title="Ссылка на этот заголовок"></a></h2>
 <section id="id3">
 <h3><a class="toc-backref" href="#id13" role="doc-backlink">Инициализация</a><a class="headerlink" href="#id3" title="Ссылка на этот заголовок"></a></h3>
-<p>Для начала работы с модулем необходимо создать экземпляр класса <cite>FaceLandmarksProcessor</cite>:</p>
+<p>Для начала работы с модулем необходимо создать экземпляр класса <code class="docutils literal notranslate"><span class="pre">FaceLandmarksProcessor</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rzd_detector.codemodules.face.emotions.landmarks</span> <span class="kn">import</span> <span class="n">FaceLandmarksProcessor</span>
 
 <span class="n">processor</span> <span class="o">=</span> <span class="n">FaceLandmarksProcessor</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><cite>verbose</cite>: (bool, optional) Если <cite>True</cite>, будут отображаться отладочные изображения. По умолчанию <cite>False</cite>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">verbose</span></code>: (bool, optional) Если <code class="docutils literal notranslate"><span class="pre">True</span></code>, будут отображаться отладочные изображения. По умолчанию <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
 </ul>
 </section>
 <section id="process-landmarks">
-<h3><a class="toc-backref" href="#id14" role="doc-backlink">Метод <cite>process_landmarks</cite></a><a class="headerlink" href="#process-landmarks" title="Ссылка на этот заголовок"></a></h3>
-<p>Этот метод является основным для обработки изображений. Он принимает путь к изображению или изображение в формате <cite>numpy.ndarray</cite>, обнаруживает лицевые ориентиры и применяет опциональные модификации:</p>
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">Метод <code class="docutils literal notranslate"><span class="pre">process_landmarks</span></code></a><a class="headerlink" href="#process-landmarks" title="Ссылка на этот заголовок"></a></h3>
+<p>Этот метод является основным для обработки изображений. Он принимает путь к изображению или изображение в формате <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>, обнаруживает лицевые ориентиры и применяет опциональные модификации:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">process_landmarks</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">image</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span>
@@ -172,18 +172,18 @@
 </div>
 <p><strong>Аргументы:</strong></p>
 <ul class="simple">
-<li><p><cite>image</cite> (Union[str, numpy.ndarray]): Путь к изображению или изображение в формате OpenCV.</p></li>
-<li><p><cite>save_path</cite> (str, optional): Путь для сохранения обработанного изображения. Если указан, изображение будет сохранено.</p></li>
-<li><p><cite>hide_eyes</cite> (bool, optional): Скрывать ли области глаз. По умолчанию <cite>True</cite>.</p></li>
-<li><p><cite>hide_mouth</cite> (bool, optional): Скрывать ли область рта. По умолчанию <cite>True</cite>.</p></li>
-<li><p><cite>mouth_k</cite> (float, optional): Коэффициент для закрытия губ (0-1 и больше). По умолчанию <cite>0.5</cite>.</p></li>
-<li><p><cite>curve_crop</cite> (bool, optional): Применять ли криволинейную обрезку лица. По умолчанию <cite>True</cite>.</p></li>
-<li><p><cite>return_image</cite> (bool, optional): Возвращать ли обработанное изображение вместе с маркерами. По умолчанию <cite>False</cite>.</p></li>
-<li><p><cite>return_raw</cite> (bool, optional): Возвращать ли landmarks в необработанном виде. По умолчанию <cite>False</cite>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">image</span></code> (Union[str, numpy.ndarray]): Путь к изображению или изображение в формате OpenCV.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">save_path</span></code> (str, optional): Путь для сохранения обработанного изображения. Если указан, изображение будет сохранено.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hide_eyes</span></code> (bool, optional): Скрывать ли области глаз. По умолчанию <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hide_mouth</span></code> (bool, optional): Скрывать ли область рта. По умолчанию <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mouth_k</span></code> (float, optional): Коэффициент для закрытия губ (0-1 и больше). По умолчанию <code class="docutils literal notranslate"><span class="pre">0.5</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">curve_crop</span></code> (bool, optional): Применять ли криволинейную обрезку лица. По умолчанию <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">return_image</span></code> (bool, optional): Возвращать ли обработанное изображение вместе с маркерами. По умолчанию <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">return_raw</span></code> (bool, optional): Возвращать ли landmarks в необработанном виде. По умолчанию <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
 </ul>
 <p><strong>Возвращает:</strong></p>
 <ul class="simple">
-<li><p><cite>FaceLandmarksResult</cite>: Объект, содержащий результаты обработки. Возвращает <cite>None</cite>, если лицо не обнаружено.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FaceLandmarksResult</span></code>: Объект, содержащий результаты обработки. Возвращает <code class="docutils literal notranslate"><span class="pre">None</span></code>, если лицо не обнаружено.</p></li>
 </ul>
 <p><strong>Пример использования:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">image_path</span> <span class="o">=</span> <span class="s2">&quot;path/to/your/image.jpg&quot;</span>
@@ -206,29 +206,29 @@
 </section>
 </section>
 <section id="facelandmarksresult">
-<h2><a class="toc-backref" href="#id15" role="doc-backlink">Класс <cite>FaceLandmarksResult</cite></a><a class="headerlink" href="#facelandmarksresult" title="Ссылка на этот заголовок"></a></h2>
+<h2><a class="toc-backref" href="#id15" role="doc-backlink">Класс <code class="docutils literal notranslate"><span class="pre">FaceLandmarksResult</span></code></a><a class="headerlink" href="#facelandmarksresult" title="Ссылка на этот заголовок"></a></h2>
 <p>Этот класс предназначен для хранения результатов обработки изображения.</p>
 <section id="id4">
 <h3><a class="toc-backref" href="#id16" role="doc-backlink">Атрибуты</a><a class="headerlink" href="#id4" title="Ссылка на этот заголовок"></a></h3>
 <ul class="simple">
-<li><p><cite>original_image</cite> (numpy.ndarray): Исходное изображение.</p></li>
-<li><p><cite>landmarks</cite> (numpy.ndarray): Координаты маркеров лица.</p></li>
-<li><p><cite>processed_image</cite> (numpy.ndarray): Обработанное изображение (доступно, если <cite>return_image=True</cite> в <cite>process_landmarks</cite>).</p></li>
-<li><p><cite>raw</cite> (numpy.ndarray): Необработанные координаты маркеров лица (None если <cite>return_raw=False</cite> в <cite>process_landmarks</cite>).</p></li>
-<li><p><cite>last_crop_info</cite> (dict): Информация об обрезке лица, используемая для восстановления координат на полном изображении.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">original_image</span></code> (numpy.ndarray): Исходное изображение.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">landmarks</span></code> (numpy.ndarray): Координаты маркеров лица.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">processed_image</span></code> (numpy.ndarray): Обработанное изображение (доступно, если <code class="docutils literal notranslate"><span class="pre">return_image=True</span></code> в <code class="docutils literal notranslate"><span class="pre">process_landmarks</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">raw</span></code> (numpy.ndarray): Необработанные координаты маркеров лица (None если <code class="docutils literal notranslate"><span class="pre">return_raw=False</span></code> в <code class="docutils literal notranslate"><span class="pre">process_landmarks</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">last_crop_info</span></code> (dict): Информация об обрезке лица, используемая для восстановления координат на полном изображении.</p></li>
 </ul>
 </section>
 <section id="id5">
 <h3><a class="toc-backref" href="#id17" role="doc-backlink">Методы</a><a class="headerlink" href="#id5" title="Ссылка на этот заголовок"></a></h3>
 <section id="get-full-mask">
-<h4><a class="toc-backref" href="#id18" role="doc-backlink"><cite>get_full_mask()</cite></a><a class="headerlink" href="#get-full-mask" title="Ссылка на этот заголовок"></a></h4>
+<h4><a class="toc-backref" href="#id18" role="doc-backlink"><code class="docutils literal notranslate"><span class="pre">get_full_mask()</span></code></a><a class="headerlink" href="#get-full-mask" title="Ссылка на этот заголовок"></a></h4>
 <p>Возвращает маску исходного изображения, где область лица выделена белым цветом. Маска вычисляется с использованием сохраненных координат обрезки.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_full_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </pre></div>
 </div>
 <p><strong>Возвращает:</strong></p>
 <ul class="simple">
-<li><p><cite>numpy.ndarray</cite>: Маска лица на исходном изображении. Возвращает <cite>None</cite>, если информация об обрезке отсутствует.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>: Маска лица на исходном изображении. Возвращает <code class="docutils literal notranslate"><span class="pre">None</span></code>, если информация об обрезке отсутствует.</p></li>
 </ul>
 <p><strong>Пример использования:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">full_mask</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get_full_mask</span><span class="p">()</span>
@@ -239,14 +239,14 @@
 </div>
 </section>
 <section id="save-image-path">
-<h4><a class="toc-backref" href="#id19" role="doc-backlink"><cite>save_image(path)</cite></a><a class="headerlink" href="#save-image-path" title="Ссылка на этот заголовок"></a></h4>
+<h4><a class="toc-backref" href="#id19" role="doc-backlink"><code class="docutils literal notranslate"><span class="pre">save_image(path)</span></code></a><a class="headerlink" href="#save-image-path" title="Ссылка на этот заголовок"></a></h4>
 <p>Сохраняет обработанное изображение по указанному пути.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">save_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
 </pre></div>
 </div>
 <p><strong>Аргументы:</strong></p>
 <ul class="simple">
-<li><p><cite>path</cite> (str): Путь для сохранения изображения.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">path</span></code> (str): Путь для сохранения изображения.</p></li>
 </ul>
 <p><strong>Пример использования:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">save_image</span><span class="p">(</span><span class="s2">&quot;path/to/save/processed_image.jpg&quot;</span><span class="p">)</span>
@@ -348,9 +348,9 @@
 <section id="id10">
 <h2><a class="toc-backref" href="#id24" role="doc-backlink">Дополнительная информация</a><a class="headerlink" href="#id10" title="Ссылка на этот заголовок"></a></h2>
 <ul class="simple">
-<li><p>Для работы с модулем необходимо установить библиотеку <cite>mediapipe</cite>.</p></li>
+<li><p>Для работы с модулем необходимо установить библиотеку <code class="docutils literal notranslate"><span class="pre">mediapipe</span></code>.</p></li>
 <li><p>Координаты лицевых ориентиров нормализованы в диапазоне [0, 1].</p></li>
-<li><p>Параметр <cite>mouth_k</cite> позволяет регулировать степень закрытия рта при применении маски.</p></li>
+<li><p>Параметр <code class="docutils literal notranslate"><span class="pre">mouth_k</span></code> позволяет регулировать степень закрытия рта при применении маски.</p></li>
 </ul>
 <p>Этот модуль предоставляет удобный и гибкий способ для обработки изображений лиц и извлечения лицевых ориентиров с возможностью применения различных модификаций.</p>
 </section>
