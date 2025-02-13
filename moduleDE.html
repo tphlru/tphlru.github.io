@@ -1,0 +1,234 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ru" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Модуль Depth Estimator &mdash; документация Human State Detection preview 1.2.1</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=bc2f3c57"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/translations.js?v=5b699b7f"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+    <link rel="prev" title="Модуль landmarks.py" href="moduleLms.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Human State Detection
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Поиск в документации" aria-label="Поиск в документации" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Меню навигации">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="main.html">Основная документация</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server.html">Развертывание на собственном сервере</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moduleLms.html">Модуль <cite>landmarks.py</cite></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Модуль Depth Estimator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#depthestimator">Объекты класса <cite>DepthEstimator</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Методы класса</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">Выходной формат</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">Примеры использования</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">1. Инициализация класса и генерация карты глубин из файла</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#opencv">2. Генерация карты глубин из изображения OpenCV и сохранение результата</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">3. Отображение карты глубин в виде тепловой карты</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Меню навигации для мобильных устройств" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Human State Detection</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Навигация по страницам">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Модуль Depth Estimator</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/moduleDE.rst.txt" rel="nofollow"> Просмотреть исходный код страницы</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="depth-estimator">
+<h1>Модуль Depth Estimator<a class="headerlink" href="#depth-estimator" title="Ссылка на этот заголовок"></a></h1>
+<nav class="contents local" id="id1">
+<p class="topic-title">Содержание</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#depthestimator" id="id7">Объекты класса <cite>DepthEstimator</cite></a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id8">Методы класса</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id9">Выходной формат</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id10">Примеры использования</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id5" id="id11">1. Инициализация класса и генерация карты глубин из файла</a></p></li>
+<li><p><a class="reference internal" href="#opencv" id="id12">2. Генерация карты глубин из изображения OpenCV и сохранение результата</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id13">3. Отображение карты глубин в виде тепловой карты</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<p>Этот модуль предоставляет класс <cite>DepthEstimator</cite> для генерации карт глубин из изображений. Он использует предварительно обученную модель для оценки глубины и предоставляет методы для загрузки изображений, генерации карт глубин, сохранения результатов и отображения карт глубин.</p>
+<section id="depthestimator">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Объекты класса <cite>DepthEstimator</cite></a><a class="headerlink" href="#depthestimator" title="Ссылка на этот заголовок"></a></h2>
+<ul class="simple">
+<li><p><cite>use_gpu</cite> (bool): Определяет, использовать ли GPU для обработки. По умолчанию <cite>True</cite>.</p></li>
+<li><p><cite>pipe</cite>: Объект пайплайна Diffusers, используемый для генерации карт глубин. Инициализируется в методе <cite>_load_model</cite>.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Методы класса</a><a class="headerlink" href="#id2" title="Ссылка на этот заголовок"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt><cite>__init__(self, use_gpu=True)</cite>: Инициализирует класс <cite>DepthEstimator</cite>, предзагружает библиотеки и модели.</dt><dd><ul>
+<li><p><cite>use_gpu</cite> (bool): Если <cite>True</cite>, используется GPU для обработки, иначе CPU.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>infer(self, image_input, save_path=None, fix_shape=True)</cite>: Генерирует карту глубин из изображения.</dt><dd><ul>
+<li><p><cite>image_input</cite> (str или numpy.ndarray): Путь к файлу изображения или изображение в формате OpenCV.</p></li>
+<li><p><cite>save_path</cite> (str, optional): Путь для сохранения результата. Если указан, карта глубин будет сохранена в формате PNG. По умолчанию <cite>None</cite>.</p></li>
+<li><p><cite>fix_shape</cite> (bool, optional): Если <cite>True</cite>, возвращает карту глубин в виде 3-мерного массива, иначе возвращает исходную форму. По умолчанию <cite>True</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>show_heatmap(self, depthmap)</cite>: Отображает карту глубин в виде тепловой карты.</dt><dd><ul>
+<li><p><cite>depthmap</cite>: Карта глубин.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="id3">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">Выходной формат</a><a class="headerlink" href="#id3" title="Ссылка на этот заголовок"></a></h2>
+<p>Метод <cite>infer</cite> возвращает карту глубин в виде массива NumPy. Если <cite>fix_shape=True</cite> (рекомендуется), то возвращается 3-мерный массив. Если <cite>fix_shape=False</cite>, то возвращается исходная форма, сгенерированная моделью.</p>
+</section>
+<section id="id4">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Примеры использования</a><a class="headerlink" href="#id4" title="Ссылка на этот заголовок"></a></h2>
+<section id="id5">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">1. Инициализация класса и генерация карты глубин из файла</a><a class="headerlink" href="#id5" title="Ссылка на этот заголовок"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rzd_detector.codemodules.face.emotions.depth_estimation</span> <span class="kn">import</span> <span class="n">DepthEstimator</span>
+
+<span class="c1"># Инициализация класса DepthEstimator с использованием GPU</span>
+<span class="n">depth_estimator</span> <span class="o">=</span> <span class="n">DepthEstimator</span><span class="p">(</span><span class="n">use_gpu</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Генерация карты глубин из файла</span>
+<span class="n">image_path</span> <span class="o">=</span> <span class="s2">&quot;path/to/your/image.jpg&quot;</span>
+<span class="n">depth_map</span> <span class="o">=</span> <span class="n">depth_estimator</span><span class="o">.</span><span class="n">infer</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
+
+<span class="c1"># Вывод формы карты глубин</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">depth_map</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="opencv">
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">2. Генерация карты глубин из изображения OpenCV и сохранение результата</a><a class="headerlink" href="#opencv" title="Ссылка на этот заголовок"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">from</span> <span class="nn">rzd_detector.codemodules.face.emotions.depth_estimation</span> <span class="kn">import</span> <span class="n">DepthEstimator</span>
+
+<span class="c1"># Инициализация класса DepthEstimator с использованием CPU</span>
+<span class="n">depth_estimator</span> <span class="o">=</span> <span class="n">DepthEstimator</span><span class="p">(</span><span class="n">use_gpu</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Загрузка изображения с использованием OpenCV</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">&quot;path/to/your/image.jpg&quot;</span><span class="p">)</span>
+
+<span class="c1"># Генерация карты глубин из изображения OpenCV и сохранение результата</span>
+<span class="n">save_path</span> <span class="o">=</span> <span class="s2">&quot;path/to/save/depth_map.png&quot;</span>
+<span class="n">depth_map</span> <span class="o">=</span> <span class="n">depth_estimator</span><span class="o">.</span><span class="n">infer</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">save_path</span><span class="o">=</span><span class="n">save_path</span><span class="p">)</span>
+
+<span class="c1"># Вывод формы карты глубин</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">depth_map</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id6">
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">3. Отображение карты глубин в виде тепловой карты</a><a class="headerlink" href="#id6" title="Ссылка на этот заголовок"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">from</span> <span class="nn">rzd_detector.codemodules.face.emotions.depth_estimation</span> <span class="kn">import</span> <span class="n">DepthEstimator</span>
+
+<span class="c1"># Инициализация класса DepthEstimator</span>
+<span class="n">depth_estimator</span> <span class="o">=</span> <span class="n">DepthEstimator</span><span class="p">()</span>
+
+<span class="c1"># Загрузка изображения с использованием OpenCV</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">&quot;path/to/your/image.jpg&quot;</span><span class="p">)</span>
+
+<span class="c1"># Генерация карты глубин</span>
+<span class="n">depth_map</span> <span class="o">=</span> <span class="n">depth_estimator</span><span class="o">.</span><span class="n">infer</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+
+<span class="c1"># Отображение карты глубин в виде тепловой карты</span>
+<span class="n">depth_estimator</span><span class="o">.</span><span class="n">show_heatmap</span><span class="p">(</span><span class="n">depth_map</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Нижняя область">
+        <a href="moduleLms.html" class="btn btn-neutral float-left" title="Модуль landmarks.py" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Предыдущая</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Авторские права 2025, LaboRad. </p>
+  </div>
+
+  Собрано при помощи <a href="https://www.sphinx-doc.org/">Sphinx</a> с использованием
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">темы,</a>
+    предоставленной <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
