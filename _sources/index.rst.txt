@@ -8,6 +8,8 @@
 
 Добро пожаловать в документацию LaboRad HSD! Надеемся, что тут вы найдете ответ на любой интересующий вас вопрос.
 
+**Ссылка на наш GitHub репозиторий -** https://github.com/tphlru/rzd_detector
+
 .. toctree::
    :maxdepth: 3
 
