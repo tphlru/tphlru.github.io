@@ -1,13 +1,16 @@
 Развертывание на собственном сервере
 ====================================
 
-Для начала нам потребуется Python с версией ">=3.9.0,<3.11"
+Для начала нам потребуется Python с версией 3.9.*
 
 Установка библиотек
 ~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: shell
+.. code-block:: bash
 
+   conda env create -f /home/timur/Projects/rzd_detector2/environment.yaml
+   conda activate ti2
+   pip install -r reqs.txt
    pip install poetry cython
    poetry lock
    poetry install

@@ -14,9 +14,9 @@
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="_static/documentation_options.js?v=bc2f3c57"></script>
-      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-      <script src="_static/translations.js?v=5b699b7f"></script>
+      <script src="_static/translations.js?v=9bfe3ffa"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Алфавитный указатель" href="genindex.html" />
     <link rel="search" title="Поиск" href="search.html" />
@@ -83,10 +83,13 @@
              
   <section id="id1">
 <h1>Развертывание на собственном сервере<a class="headerlink" href="#id1" title="Ссылка на этот заголовок"></a></h1>
-<p>Для начала нам потребуется Python с версией «&gt;=3.9.0,&lt;3.11»</p>
+<p>Для начала нам потребуется Python с версией 3.9.*</p>
 <section id="id2">
 <h2>Установка библиотек<a class="headerlink" href="#id2" title="Ссылка на этот заголовок"></a></h2>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>poetry<span class="w"> </span>cython
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>/home/timur/Projects/rzd_detector2/environment.yaml
+conda<span class="w"> </span>activate<span class="w"> </span>ti2
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>reqs.txt
+pip<span class="w"> </span>install<span class="w"> </span>poetry<span class="w"> </span>cython
 poetry<span class="w"> </span>lock
 poetry<span class="w"> </span>install
 </pre></div>
