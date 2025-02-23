@@ -1,0 +1,188 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ru" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Модуль pulse.py &mdash; документация Human State Detection preview 1.2.1</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=bc2f3c57"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/translations.js?v=9bfe3ffa"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+    <link rel="prev" title="Модуль Depth Estimator" href="moduleDE.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Human State Detection
+              <img src="_static/text1.png" class="logo" alt="Логотип"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Поиск в документации" aria-label="Поиск в документации" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Меню навигации">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="main.html">Основная документация</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server.html">Развертывание на собственном сервере</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moduleLms.html">Модуль <code class="docutils literal notranslate"><span class="pre">landmarks.py</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="moduleDE.html">Модуль Depth Estimator</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Модуль <code class="docutils literal notranslate"><span class="pre">pulse.py</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Обзор</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-bpm-with-pbv">Функция <code class="docutils literal notranslate"><span class="pre">get_bpm_with_pbv</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#process-pulse-info">Функция <code class="docutils literal notranslate"><span class="pre">process_pulse_info</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#evaluate-pulse-results">Функция <code class="docutils literal notranslate"><span class="pre">evaluate_pulse_results</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Меню навигации для мобильных устройств" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Human State Detection</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Навигация по страницам">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Модуль <code class="docutils literal notranslate"><span class="pre">pulse.py</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/modulePulse.rst.txt" rel="nofollow"> Просмотреть исходный код страницы</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="pulse-py">
+<h1>Модуль <code class="docutils literal notranslate"><span class="pre">pulse.py</span></code><a class="headerlink" href="#pulse-py" title="Ссылка на этот заголовок"></a></h1>
+<nav class="contents local" id="id1">
+<p class="topic-title">Содержание</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#id2" id="id3">Обзор</a></p></li>
+<li><p><a class="reference internal" href="#get-bpm-with-pbv" id="id4">Функция <code class="docutils literal notranslate"><span class="pre">get_bpm_with_pbv</span></code></a></p></li>
+<li><p><a class="reference internal" href="#process-pulse-info" id="id5">Функция <code class="docutils literal notranslate"><span class="pre">process_pulse_info</span></code></a></p></li>
+<li><p><a class="reference internal" href="#evaluate-pulse-results" id="id6">Функция <code class="docutils literal notranslate"><span class="pre">evaluate_pulse_results</span></code></a></p></li>
+</ul>
+</nav>
+<p>Этот модуль предназначен для обработки лиц и получения частоты ударов в минуту сердца с использование библиотеки <code class="docutils literal notranslate"><span class="pre">pyVHR</span></code>.</p>
+<section id="id2">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Обзор</a><a class="headerlink" href="#id2" title="Ссылка на этот заголовок"></a></h2>
+<p>Модуль состоит из трех основных функций:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">get_bpm_with_pbv</span></code>: Функция для извлечения пульса объёма крови (BVP) из видеофайла и оценки количества ударов в минуту (BPM).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">process_pulse_info</span></code>: Функция для выполнения оценки полученных значений пульса.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">evaluate_pulse_results</span></code>: Функция выполнения оценки по шкале баллов на основе полученных данных о значениях и изменениях пульса.</p></li>
+</ul>
+</section>
+<section id="get-bpm-with-pbv">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Функция <code class="docutils literal notranslate"><span class="pre">get_bpm_with_pbv</span></code></a><a class="headerlink" href="#get-bpm-with-pbv" title="Ссылка на этот заголовок"></a></h2>
+<p><strong>Аргументы:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">videoFileName</span> <span class="pre">(str)</span></code>: Путь к видеофайлу.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cuda</span> <span class="pre">(bool,</span> <span class="pre">опционально)</span></code>: Флаг для использования GPU для обработки. По умолчанию <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">winsize</span> <span class="pre">(int,</span> <span class="pre">опционально)</span></code>: Размер окна для обработки сигнала. По умолчанию <code class="docutils literal notranslate"><span class="pre">4</span></code>.</p></li>
+</ul>
+<p><strong>Возвращает:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tuple</span></code>: Кортеж, содержащий извлечённый BVP, временные метки и BPM.</p></li>
+</ul>
+<p><strong>Исключения:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">AssertionError</span></code>: Видеофайл не существует.</p></li>
+</ul>
+</section>
+<section id="process-pulse-info">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Функция <code class="docutils literal notranslate"><span class="pre">process_pulse_info</span></code></a><a class="headerlink" href="#process-pulse-info" title="Ссылка на этот заголовок"></a></h2>
+<p><strong>Аргументы:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">bpm</span> <span class="pre">(list)</span></code>: Список исходных значений.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">base_offset</span> <span class="pre">(int,</span> <span class="pre">опционально)</span></code>: Смещение для значений пульса. По умолчанию <code class="docutils literal notranslate"><span class="pre">10</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">slow_plot</span> <span class="pre">(bool,</span> <span class="pre">опционально)</span></code>: Показывать график или нет. По умолчанию <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plot_path</span> <span class="pre">(str,</span> <span class="pre">опционально)</span></code>: Путь для сохранения графика. По умолчанию <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+</ul>
+<p><strong>Возвращает:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tuple</span></code>: Кортеж, содержащий результаты анализа пульса в виде медианы, трендов, медианы верхушек и т.п.</p></li>
+</ul>
+<p><strong>Исключения:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ValueError</span></code>: Список BPM пуст или base_offset меньше минимального значения пульса.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AssertionError</span></code>: Значение <code class="docutils literal notranslate"><span class="pre">base_offset</span></code> не входит в диапазон от -40 до 40.</p></li>
+</ul>
+</section>
+<section id="evaluate-pulse-results">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Функция <code class="docutils literal notranslate"><span class="pre">evaluate_pulse_results</span></code></a><a class="headerlink" href="#evaluate-pulse-results" title="Ссылка на этот заголовок"></a></h2>
+<p><strong>Аргументы:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base_mean</span> <span class="pre">(float)</span></code>: Общая медиана пульса.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">trend</span> <span class="pre">(int)</span></code>: Трэнд.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">high_med</span> <span class="pre">(float)</span></code>: Медиана наивысших значений (медиана <code class="docutils literal notranslate"><span class="pre">tops_values</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">midpoints</span> <span class="pre">(list)</span></code>: Верхушки графика.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tops_values</span> <span class="pre">(list)</span></code>: Самые большие значения.</p></li>
+</ul>
+<p><strong>Возвращает:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">points</span> <span class="pre">(int)</span></code>: Оценка пульса по всем входящим критериям.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Нижняя область">
+        <a href="moduleDE.html" class="btn btn-neutral float-left" title="Модуль Depth Estimator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Предыдущая</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Авторские права 2025, LaboRad. </p>
+  </div>
+
+  Собрано при помощи <a href="https://www.sphinx-doc.org/">Sphinx</a> с использованием
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">темы,</a>
+    предоставленной <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
