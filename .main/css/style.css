@@ -283,9 +283,9 @@ header {
 
 .gradient-fill:before {
     color: #fc73b4;
-    background: -moz-linear-gradient(top, rgba(219, 129, 0, 0.8) 0%, rgba(61, 1, 245, 0.8) 100%);
-    background: -webkit-linear-gradient(top,rgba(219, 129, 0, 0.8) 0%, rgba(61, 1, 245, 0.8) 100%);
-    background: linear-gradient(to bottom, rgba(219, 129, 0, 0.8) 0%, rgba(61, 1, 245, 0.8) 100%);
+    background: -moz-linear-gradient(top,  rgba(0, 255, 64, 0.8) 0%, rgba(61, 1, 245, 0.8) 100%);
+    background: -webkit-linear-gradient(top,  rgba(0, 255, 64, 0.8) 0%, rgba(61, 1, 245, 0.8) 100%);
+    background: linear-gradient( 135deg, rgba(0, 255, 64, 0.8) 0%, rgba(61, 1, 245, 0.8) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -312,9 +312,9 @@ header {
     position: absolute;
     width: 3px;
     color: #fc73b4;
-    background: -moz-linear-gradient(top, rgba(219, 129, 0, 1) 0%, rgba(61, 1, 245, 0.8) 100%);
-    background: -webkit-linear-gradient(top, rgba(219, 129, 0, 1) 0%, rgba(61, 1, 245, 0.8) 100%);
-    background: linear-gradient(to bottom, rgba(219, 129, 0, 1) 0%, rgba(61, 1, 245, 0.8) 100%);
+    background: -moz-linear-gradient(top,  rgba(0, 255, 64, 0.8) 0%, rgba(61, 1, 245, 0.8) 100%);
+    background: -webkit-linear-gradient(top,  rgba(0, 255, 64, 0.8) 0%, rgba(61, 1, 245, 0.8) 100%);
+    background: linear-gradient( 135deg, rgba(0, 255, 64, 0.8) 0%, rgba(61, 1, 245, 0.8) 100%);
     top: 0;
     bottom: 0;
     left: 0;
