@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Модуль landmarks.py &mdash; документация Human State Detection preview 1.2.1</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
@@ -46,6 +46,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Меню навигации">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="main.html">Основная документация</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regulations.html">Регламент взаимодействия с пассажиром</a></li>
 <li class="toctree-l1"><a class="reference internal" href="server.html">Развертывание на собственном сервере</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Модуль <code class="docutils literal notranslate"><span class="pre">landmarks.py</span></code></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id2">Обзор</a></li>
@@ -147,7 +148,7 @@
 <section id="id3">
 <h3><a class="toc-backref" href="#id13" role="doc-backlink">Инициализация</a><a class="headerlink" href="#id3" title="Ссылка на этот заголовок"></a></h3>
 <p>Для начала работы с модулем необходимо создать экземпляр класса <code class="docutils literal notranslate"><span class="pre">FaceLandmarksProcessor</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rzd_detector.codemodules.face.emotions.landmarks</span> <span class="kn">import</span> <span class="n">FaceLandmarksProcessor</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">rzd_detector.codemodules.face.emotions.landmarks</span><span class="w"> </span><span class="kn">import</span> <span class="n">FaceLandmarksProcessor</span>
 
 <span class="n">processor</span> <span class="o">=</span> <span class="n">FaceLandmarksProcessor</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
@@ -159,7 +160,7 @@
 <section id="process-landmarks">
 <h3><a class="toc-backref" href="#id14" role="doc-backlink">Метод <code class="docutils literal notranslate"><span class="pre">process_landmarks</span></code></a><a class="headerlink" href="#process-landmarks" title="Ссылка на этот заголовок"></a></h3>
 <p>Этот метод является основным для обработки изображений. Он принимает путь к изображению или изображение в формате <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>, обнаруживает лицевые ориентиры и применяет опциональные модификации:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">process_landmarks</span><span class="p">(</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">process_landmarks</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">image</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span>
         <span class="n">save_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -225,7 +226,7 @@
 <section id="get-full-mask">
 <h4><a class="toc-backref" href="#id18" role="doc-backlink"><code class="docutils literal notranslate"><span class="pre">get_full_mask()</span></code></a><a class="headerlink" href="#get-full-mask" title="Ссылка на этот заголовок"></a></h4>
 <p>Возвращает маску исходного изображения, где область лица выделена белым цветом. Маска вычисляется с использованием сохраненных координат обрезки.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_full_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_full_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </pre></div>
 </div>
 <p><strong>Возвращает:</strong></p>
@@ -243,7 +244,7 @@
 <section id="save-image-path">
 <h4><a class="toc-backref" href="#id19" role="doc-backlink"><code class="docutils literal notranslate"><span class="pre">save_image(path)</span></code></a><a class="headerlink" href="#save-image-path" title="Ссылка на этот заголовок"></a></h4>
 <p>Сохраняет обработанное изображение по указанному пути.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">save_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">save_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
 </pre></div>
 </div>
 <p><strong>Аргументы:</strong></p>
@@ -261,8 +262,8 @@
 <h2><a class="toc-backref" href="#id20" role="doc-backlink">Примеры использования</a><a class="headerlink" href="#id6" title="Ссылка на этот заголовок"></a></h2>
 <section id="id7">
 <h3><a class="toc-backref" href="#id21" role="doc-backlink">Пример 1: Обработка изображения и получение координат</a><a class="headerlink" href="#id7" title="Ссылка на этот заголовок"></a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
-<span class="kn">from</span> <span class="nn">rzd_detector.codemodules.face.emotions.landmarks</span> <span class="kn">import</span> <span class="n">FaceLandmarksProcessor</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rzd_detector.codemodules.face.emotions.landmarks</span><span class="w"> </span><span class="kn">import</span> <span class="n">FaceLandmarksProcessor</span>
 
 <span class="c1"># Инициализация процессора</span>
 <span class="n">processor</span> <span class="o">=</span> <span class="n">FaceLandmarksProcessor</span><span class="p">()</span>
@@ -293,8 +294,8 @@
 </section>
 <section id="id8">
 <h3><a class="toc-backref" href="#id22" role="doc-backlink">Пример 2: Скрытие глаз и рта, криволинейная обрезка</a><a class="headerlink" href="#id8" title="Ссылка на этот заголовок"></a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
-<span class="kn">from</span> <span class="nn">rzd_detector.codemodules.face.emotions.landmarks</span> <span class="kn">import</span> <span class="n">FaceLandmarksProcessor</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rzd_detector.codemodules.face.emotions.landmarks</span><span class="w"> </span><span class="kn">import</span> <span class="n">FaceLandmarksProcessor</span>
 
 <span class="c1"># Инициализация процессора</span>
 <span class="n">processor</span> <span class="o">=</span> <span class="n">FaceLandmarksProcessor</span><span class="p">()</span>
@@ -320,8 +321,8 @@
 </section>
 <section id="id9">
 <h3><a class="toc-backref" href="#id23" role="doc-backlink">Пример 3: Получение маски лица на полном изображении</a><a class="headerlink" href="#id9" title="Ссылка на этот заголовок"></a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
-<span class="kn">from</span> <span class="nn">rzd_detector.codemodules.face.emotions.landmarks</span> <span class="kn">import</span> <span class="n">FaceLandmarksProcessor</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rzd_detector.codemodules.face.emotions.landmarks</span><span class="w"> </span><span class="kn">import</span> <span class="n">FaceLandmarksProcessor</span>
 
 <span class="c1"># Инициализация процессора</span>
 <span class="n">processor</span> <span class="o">=</span> <span class="n">FaceLandmarksProcessor</span><span class="p">()</span>

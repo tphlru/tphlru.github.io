@@ -1,0 +1,237 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ru" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Регламент взаимодействия с пассажиром &mdash; документация Human State Detection preview 1.2.1</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=bc2f3c57"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/translations.js?v=9bfe3ffa"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+    <link rel="next" title="Развертывание на собственном сервере" href="server.html" />
+    <link rel="prev" title="Основная документация" href="main.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Human State Detection
+              <img src="_static/text1.png" class="logo" alt="Логотип"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Поиск в документации" aria-label="Поиск в документации" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Меню навигации">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="main.html">Основная документация</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Регламент взаимодействия с пассажиром</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Регламент приглашения пассажира на дополнительный досмотр</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">Регламент взаимодействия с пассажиром в комнате досмотра</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#i"><strong>Этап I «Установление базовой линии поведения»</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ii"><strong>Этап II «Вопросы на детализацию»</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#iii"><strong>Этап III «Вопросы на постороннюю тему»</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#iv"><strong>Этап IV «Конфронтация»</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4"><strong>Признаки возможной лжи</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="server.html">Развертывание на собственном сервере</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moduleLms.html">Модуль <code class="docutils literal notranslate"><span class="pre">landmarks.py</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="moduleDE.html">Модуль Depth Estimator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modulePulse.html">Модуль <code class="docutils literal notranslate"><span class="pre">pulse.py</span></code></a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Меню навигации для мобильных устройств" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Human State Detection</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Навигация по страницам">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Регламент взаимодействия с пассажиром</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/regulations.rst.txt" rel="nofollow"> Просмотреть исходный код страницы</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>Регламент взаимодействия с пассажиром<a class="headerlink" href="#id1" title="Ссылка на этот заголовок"></a></h1>
+<section id="id2">
+<h2>Регламент приглашения пассажира на дополнительный досмотр<a class="headerlink" href="#id2" title="Ссылка на этот заголовок"></a></h2>
+<p>Пассажир приглашается на дополнительный досмотр, когда система определила его как потенциального нарушителя, присвоив ему количество баллов ниже нормы (вся информация о пассажире будет доступна в программе). В таком случае сотрудник охраны должен вежливо сопроводить подозреваемого в помещение досмотра для проведения беседы.</p>
+</section>
+<section id="id3">
+<h2>Регламент взаимодействия с пассажиром в комнате досмотра<a class="headerlink" href="#id3" title="Ссылка на этот заголовок"></a></h2>
+<p>В комнате досмотра сотрудник должен задать подозреваемому ряд вопросов, придерживаясь следующей стратегии (речь сотрудника должна быть уважительной):</p>
+<section id="i">
+<h3><strong>Этап I «Установление базовой линии поведения»</strong><a class="headerlink" href="#i" title="Ссылка на этот заголовок"></a></h3>
+<p><em>Цель:</em> Зафиксировать нормальное поведение подозреваемого, чтобы позже выявить отклонения.
+Примеры вопросов:</p>
+<ul class="simple">
+<li><p>Часто ли пользуетесь поездами?</p></li>
+<li><p>Как думаете проводить время в поезде?</p></li>
+<li><p>У вас так много багажа, далеко едете?</p></li>
+<li><p>Успели ли вы уже посетить наш буфет?</p></li>
+</ul>
+<p>Нейтральные вопросы помогают оценить речь, мимику, жесты в спокойном состоянии.</p>
+</section>
+<section id="ii">
+<h3><strong>Этап II «Вопросы на детализацию»</strong><a class="headerlink" href="#ii" title="Ссылка на этот заголовок"></a></h3>
+<p><em>Цель:</em> Выявить признаки поведения подозреваемого при лжи, задавая вопросы требующие детализированного вранья.
+Примеры вопросов:</p>
+<ul class="simple">
+<li><p>Каким маршрутом вы едете?</p></li>
+<li><p>Какой номер вашего вагона?</p></li>
+<li><p>Куда направляетесь?</p></li>
+<li><p>Кто-нибудь помогал вам собирать вещи?</p></li>
+<li><p>На чем вы добирались до вокзала?</p></li>
+<li><p>Где вы покупали билеты?</p></li>
+</ul>
+<p>Лжец может путаться в деталях или давать избыточные, неестественные подробности (признаки возможной лжи приведены ниже).</p>
+</section>
+<section id="iii">
+<h3><strong>Этап III «Вопросы на постороннюю тему»</strong><a class="headerlink" href="#iii" title="Ссылка на этот заголовок"></a></h3>
+<p><em>Цель:</em> Запутать подозреваемого и заставить его потерять контроль над ситуацией.
+Примеры вопросов:</p>
+<ul class="simple">
+<li><p>Погода для путешествия сегодня прекрасная, не правда ли?</p></li>
+<li><p>Много ли сейчас пробок в городе?</p></li>
+<li><p>Взяли с собой что-нибудь почитать?</p></li>
+<li><p>У вас всё в порядке?</p></li>
+</ul>
+<p>Вопросы на постороннюю тему отвлекают подозреваемого, снижают его бдительность и сбивают с толку, вызывают напряжение.</p>
+</section>
+<section id="iv">
+<h3><strong>Этап IV «Конфронтация»</strong><a class="headerlink" href="#iv" title="Ссылка на этот заголовок"></a></h3>
+<p><em>Цель:</em>  Задать человеку вопросы напрямую связанные с возможным преступлением, дабы выявить психологическую и физическую реакцию.
+Примеры вопросов:</p>
+<ul class="simple">
+<li><p>Есть ли у вас предметы, запрещённые к провозу?</p></li>
+<li><p>Наша система заподозрила вас в намерении совершить преступление, что вы об этом думаете?</p></li>
+<li><p>Вам приходилось когда-нибудь лгать в беседе с официальными лицами?</p></li>
+</ul>
+<p>Пользуясь снижением бдительности подозреваемого, которое было вызвано резкими сменами темпа разговора, необходимо задать ему прямые вопросы, позволяющие подтвердить, либо опровергнуть факт причастности допрашиваемого к преступлению, основываясь на его психологической и физической реакции.</p>
+<section id="id4">
+<h4><strong>Признаки возможной лжи</strong><a class="headerlink" href="#id4" title="Ссылка на этот заголовок"></a></h4>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt><em>Невербальные сигналы:</em></dt><dd><ul class="simple">
+<li><p>Избегания зрительного контакта</p></li>
+<li><p>Нервные движения</p></li>
+<li><p>Закрытые позы</p></li>
+<li><p>Кратковременные проявления различных эмоций</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><em>Речевые паттерны:</em></dt><dd><ul class="simple">
+<li><p>Паузы и колебания</p></li>
+<li><p>Избыточная детализация</p></li>
+<li><p>Упрощение ответов</p></li>
+<li><p>Противоречия ответов</p></li>
+<li><p>Повтор вопросов</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><em>Физиологические реакции:</em></dt><dd><ul class="simple">
+<li><p>Учащенное дыхание</p></li>
+<li><p>Учащенное моргание</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><em>Эмоциональные реакции:</em></dt><dd><ul class="simple">
+<li><p>Несоответствие эмоций ситуации</p></li>
+<li><p>Чрезмерная демонстрация эмоций</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><em>Стратегии уклонения:</em></dt><dd><ul class="simple">
+<li><p>Агрессия или пассивность</p></li>
+<li><p>Смена темы</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+<p>В случае прохождения человеком досмотра с положительным результатом (не причастен),  его следует проводить из комнаты допроса и принести свои извинения за беспокойство.
+Однако в случае отрицательного результата (причастен), человека необходимо вывести из здания вокзала, при необходимости воспользовавшись силами охранной организации вокзала.</p>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Нижняя область">
+        <a href="main.html" class="btn btn-neutral float-left" title="Основная документация" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Предыдущая</a>
+        <a href="server.html" class="btn btn-neutral float-right" title="Развертывание на собственном сервере" accesskey="n" rel="next">Следующая <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Авторские права 2025, LaboRad. </p>
+  </div>
+
+  Собрано при помощи <a href="https://www.sphinx-doc.org/">Sphinx</a> с использованием
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">темы,</a>
+    предоставленной <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

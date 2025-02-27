@@ -11,9 +11,10 @@
 **Ссылка на наш GitHub репозиторий -** https://github.com/tphlru/rzd_detector
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 4
 
    main
+   regulations
    server
    moduleLms
    moduleDE
