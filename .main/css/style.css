@@ -91,7 +91,7 @@ p.lead {
 }
 
 .text-primary {
-    color: #e38cb7 !important;
+    color: #00ff00 !important;
 }
 
 .light-font {
@@ -213,7 +213,7 @@ p.lead {
     }
     .navbar-nav>.nav-item>.nav-link.active:after {
         content: "";
-        border-bottom: 2px solid #cd99d4;
+        border-bottom: 2px solid #0059ff;
         left: 1rem;
         right: 1rem;
         bottom: 5px;
